@@ -39,3 +39,23 @@ en:
   id: "id"
   logo: "logo"
   copyright: "&copy;"
+
+  runs:
+    create:
+      notice: "Run was successfully created."
+
+    update:
+      notice: "Run was successfully updated."
+
+    destroy:
+      notice: "Run was successfully destroyed."
+
+  users:
+    create:
+      notice: "User was successfully created."
+
+    update:
+      notice: "User was successfully updated."
+
+    destroy:
+      notice: "User was successfully destroyed."

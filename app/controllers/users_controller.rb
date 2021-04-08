@@ -1,31 +1,31 @@
 class UsersController < ApplicationController
+  # The set_run method is called before specific actions.
   before_action :set_user, only: %i[ show edit update destroy ]
 
-  # GET /users or /users.json
-  def index
-    @users = User.all
-  end
-
+  # The show action which gets the page which shows the current user.
   # GET /users/1 or /users/1.json
   def show
   end
 
+  # The new action which gets the page used to create a new user.
   # GET /users/new
   def new
     @user = User.new
   end
 
+  # The edit action which gets the page used to update a user.
   # GET /users/1/edit
   def edit
   end
 
+  # The create action which creates a user.
   # POST /users or /users.json
   def create
     @user = User.new(user_params)
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: "User was successfully created." }
+        format.html { redirect_to @user, notice: t('.notice') }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -34,11 +34,12 @@ class UsersController < ApplicationController
     end
   end
 
+  # The update action which updates the user.
   # PATCH/PUT /users/1 or /users/1.json
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: "User was successfully updated." }
+        format.html { redirect_to @user, notice: t('.notice') }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -47,23 +48,26 @@ class UsersController < ApplicationController
     end
   end
 
+  # The destroy action which removes a user.
   # DELETE /users/1 or /users/1.json
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: "User was successfully destroyed." }
+      format.html { redirect_to users_url, notice: t('.notice') }
       format.json { head :no_content }
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-  def set_user
-    @user = User.find(params[:id])
-  end
+    # Sets the current user.
+    def set_user
+      @user = User.find(params[:id])
+    end
 
+    # Creates the strong parameters for users.
     # Only allow a list of trusted parameters through.
-  def user_params
-    params.require(:user).permit(:name, :emailAddress, :age)
-  end
+    def user_params
+      params.require(:user).permit(:name, :emailAddress, :age)
+    end
 end
