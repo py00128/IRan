@@ -10,10 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_08_111545) do
+ActiveRecord::Schema.define(version: 2021_04_08_112312) do
 
   create_table "runs", force: :cascade do |t|
-    t.integer "runID"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "userID"
