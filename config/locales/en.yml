@@ -41,6 +41,12 @@ en:
   copyright: "&copy;"
 
   runs:
+    index:
+      user_id: "User ID:"
+
+    show:
+      user_id: "User ID:"
+
     create:
       notice: "Run was successfully created."
 

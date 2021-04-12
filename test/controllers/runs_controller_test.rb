@@ -6,43 +6,43 @@ class RunsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get runs_url
+    get user_runs_url(@run.userID)
     assert_response :success
   end
 
   test "should get new" do
-    get new_run_url
+    get new_user_run_url(@run.userID)
     assert_response :success
   end
 
   test "should create run" do
     assert_difference('Run.count') do
-      post runs_url, params: { run: { runID: @run.runID } }
+      post user_runs_url(@run.userID), params: { run: { userID: @run.userID } }
     end
 
-    assert_redirected_to run_url(Run.last)
+    assert_redirected_to user_run_url(Run.last)
   end
 
   test "should show run" do
-    get run_url(@run)
+    get user_run_url(@run.userID, @run)
     assert_response :success
   end
 
   test "should get edit" do
-    get edit_run_url(@run)
+    get edit_user_run_url(@run.userID, @run)
     assert_response :success
   end
 
   test "should update run" do
-    patch run_url(@run), params: { run: { runID: @run.runID } }
-    assert_redirected_to run_url(@run)
+    patch user_run_url(@run.userID, @run), params: { run: { userID: @run.userID } }
+    assert_redirected_to user_run_url(@run.userID, @run)
   end
 
   test "should destroy run" do
     assert_difference('Run.count', -1) do
-      delete run_url(@run)
+      delete user_run_url(@run.userID, @run)
     end
 
-    assert_redirected_to runs_url
+    assert_redirected_to user_runs_url(@run.userID)
   end
 end

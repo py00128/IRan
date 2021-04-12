@@ -1,9 +1,9 @@
 %p#notice= notice
 
 %p
-  %b Runid:
-  = @run.runID
+  %b= t('.user_id')
+  = @run.userID
 
-= link_to 'Edit', edit_run_path(@run)
+= link_to 'Edit', edit_user_run_path(@run)
 \|
-= link_to 'Back', runs_path
+= link_to 'Back', user_runs_path
