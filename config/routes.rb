@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :helps
   # Resource paths.
   resources :users, except: :index do
     resources :runs
