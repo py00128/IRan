@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_12_160424) do
+ActiveRecord::Schema.define(version: 2021_04_17_191224) do
 
   create_table "helps", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "message"
+    t.string "name", null: false
+    t.string "email", null: false
+    t.string "message", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -23,13 +23,13 @@ ActiveRecord::Schema.define(version: 2021_04_12_160424) do
   create_table "runs", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "userID"
+    t.integer "userID", null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "emailAddress"
-    t.integer "age"
+    t.string "name", null: false
+    t.string "emailAddress", null: false
+    t.integer "age", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "{:foreign_key=>true}_id"
