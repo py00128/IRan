@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :helps
+  resources :helps, only: [:new, :create]
   # Resource paths.
-  resources :users, except: :index do
-    resources :runs
+  resources :users, only: [:show, :new, :create, :update] do
+    resources :runs, only: [:new, :create]
   end
   # Home page is the root.
   root 'home#home'

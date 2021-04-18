@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   # The set_run method is called before specific actions.
-  before_action :set_user, only: %i[ show edit update destroy ]
+  before_action :set_user, only: %i[ show update ]
 
   # The show action which gets the page which shows the current user.
   # GET /users/1 or /users/1.json
@@ -11,11 +11,6 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
-  end
-
-  # The edit action which gets the page used to update a user.
-  # GET /users/1/edit
-  def edit
   end
 
   # The create action which creates a user.
@@ -39,22 +34,9 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: t('.notice') }
-        format.json { render :show, status: :ok, location: @user }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        format.html { redirect_to root_path, notice: t('.notice') }
+        format.json { render :show, status: :ok, location: root_path }
       end
-    end
-  end
-
-  # The destroy action which removes a user.
-  # DELETE /users/1 or /users/1.json
-  def destroy
-    @user.destroy
-    respond_to do |format|
-      format.html { redirect_to users_url, notice: t('.notice') }
-      format.json { head :no_content }
     end
   end
 

@@ -5,11 +5,6 @@ class RunsControllerTest < ActionDispatch::IntegrationTest
     @run = runs(:one)
   end
 
-  test "should get index" do
-    get user_runs_url(@run.userID)
-    assert_response :success
-  end
-
   test "should get new" do
     get new_user_run_url(@run.userID)
     assert_response :success
@@ -21,28 +16,5 @@ class RunsControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_redirected_to user_run_url(Run.last)
-  end
-
-  test "should show run" do
-    get user_run_url(@run.userID, @run)
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get edit_user_run_url(@run.userID, @run)
-    assert_response :success
-  end
-
-  test "should update run" do
-    patch user_run_url(@run.userID, @run), params: { run: { userID: @run.userID } }
-    assert_redirected_to user_run_url(@run.userID, @run)
-  end
-
-  test "should destroy run" do
-    assert_difference('Run.count', -1) do
-      delete user_run_url(@run.userID, @run)
-    end
-
-    assert_redirected_to user_runs_url(@run.userID)
   end
 end
