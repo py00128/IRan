@@ -20,7 +20,7 @@ class RunTest < ActiveSupport::TestCase
   test 'should save valid run' do
     run = Run.new # creates a new run
 
-    run.userID = @user.id # sets the userID of the run
+    run.user = @user # sets the userID of the run
 
     run.save # attempts to save the run
     assert run.valid? # the run should be saved

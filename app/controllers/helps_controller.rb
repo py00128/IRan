@@ -1,5 +1,4 @@
 class HelpsController < ApplicationController
-
   # GET /helps/new
   def new
     @help = Help.new
@@ -21,11 +20,6 @@ class HelpsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_help
-      @help = Help.find(params[:id])
-    end
-
     # Only allow a list of trusted parameters through.
     def help_params
       params.require(:help).permit(:name, :email, :message)
