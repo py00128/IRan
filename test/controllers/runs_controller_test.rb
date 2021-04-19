@@ -7,13 +7,13 @@ class RunsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get new" do
-    get new_user_run_url(@user)
+    get new_run_url
     assert_response :success
   end
 
   test "should create run" do
     assert_difference('Run.count') do
-      post user_runs_url(@user), params: { run: { user_id: @user } }
+      post runs_url, params: { run: { user_id: @user } }
     end
 
     assert_redirected_to root_url

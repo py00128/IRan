@@ -29,17 +29,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # The update action which updates the user.
-  # PATCH/PUT /users/1 or /users/1.json
-  def update
-    respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to root_path, notice: t('.notice') }
-        format.json { render :show, status: :ok, location: root_path }
-      end
-    end
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     # Sets the current user.
