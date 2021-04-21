@@ -10,5 +10,7 @@ Rails.application.routes.draw do
   get 'users', to: 'users#show'
   get 'runs', to: 'runs#new'
   get 'helps', to: 'helps#new'
+  get 'contact', to: 'home#contact'
+  post 'request_contact', to: 'home#request_contact'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
