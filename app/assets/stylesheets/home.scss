@@ -3,34 +3,35 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .mapPlanner {
-  height: 100%;
-  width: 50%;
+  height: 74%;
+  width: 70%;
   position: fixed;
   z-index: 1;
-  top: 140px;
+  top: 150px;
+  padding_bottom: 100px;
   overflow-x: hidden;
-  padding-top: 20px;
+  padding-left: 50px;
   left:0;
 }
 
 .chatBox {
   height: 50%;
-  width: 50%;
+  width: 30%;
   position: fixed;
   z-index: 1;
-  top: 140px;
+  top: 150px;
   overflow-x: hidden;
-  padding-top: 20px;
+  padding-right: 50px;
   right: 0;
 }
 
 .musicSuggestion {
   height: 40%;
-  width: 50%;
+  width: 30%;
   position: fixed;
   z-index: 1;
-  bottom: 0;
+  bottom: 105px;
   overflow-x: hidden;
-  padding-top: 20px;
+  padding-right: 50px;
   right: 0;
 }
