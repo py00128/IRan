@@ -1,17 +1,17 @@
 class RunsController < ApplicationController
-  # The set_user method is called before all actions.
-  before_action :set_user
+  # The user must sign in before any of the actions.
+  before_action :authenticate_user!
 
   # The new action which gets the page that allows the user to create a new run.
   # GET /users/runs/new
   def new
-    @run = @user.runs.new
+    @run = current_user.runs.new
   end
 
   # The create action which creates a run.
   # POST /users/runs or /users/runs.json
   def create
-    @run = @user.runs.new(run_params)
+    @run = current_user.runs.new(run_params)
 
     respond_to do |format|
       if @run.save
@@ -25,14 +25,9 @@ class RunsController < ApplicationController
   end
 
   private
-    # Finds the user using the params
-    def set_user
-      @user = User.find_by(id: params[:user_id]) || User.find(run_params[:userID])
-    end
-
     # Only allow a list of trusted parameters through.
     # Creates the strong parameters for runs.
     def run_params
-      params.require(:run).permit(:userID)
+      params.require(:run).permit(:user_id)
     end
 end

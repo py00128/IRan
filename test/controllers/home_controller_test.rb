@@ -2,6 +2,12 @@ require 'test_helper'
 
 # tests the home controller
 class HomeControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
+  setup do
+    @user = users(:one)
+    sign_in @user
+  end
 
   # tests the home action.
   test "should get home" do

@@ -1,9 +1,12 @@
 require 'test_helper'
 
 class RunsControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
   setup do
     @run = runs(:one)
     @user = users(:one)
+    sign_in @user
   end
 
   test "should get new" do
