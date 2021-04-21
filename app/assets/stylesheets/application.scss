@@ -13,25 +13,97 @@
  *= require_tree .
  *= require_self
  */
-/* @import "bootstrap-sprockets"; */
-/* @import "bootstrap"; */
 
-$font: Verdana, Sans-serif;
-$light_blue: #00A2E8;
-$dark_blue: #1806BE;
+.title{
+  padding: 10px;
+  text-align: center;
+  background: lightgray;
+  color: black;
+}
 
-/* sets the style of the body */
 body {
-  font-family: $font; /* sets the font */
-  background-color: white; /* sets the background colour */
-  margin: 10px; /* sets the margin to 10px */
-  padding: 10px; /* sets the padding to 10px */
+  background-color: white;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
-/* sets the style of the logo */
-#logo {
-  font-family: Arial; /* set the font family to Arial */
-  font-weight: bold; /* set the font weight to bold */
-  color: $light_blue; /* set the colour */
-  text-decoration: none; /* remove the underline in the hyperlink */
+.centerText {
+  text-align: center;
 }
+
+.centerTable{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: darkgray;
+}
+
+li {
+  float: left;
+  border-right:1px solid #BBBBBB;
+}
+
+li:last-child {
+  border-right: none;
+  border-left: 1px solid #BBBBBB;
+}
+
+li a, a:visited {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  color: white;
+  text-underline: white;
+}
+
+a.active {
+  background-color: black;
+  color: white;
+  text-underline: white;
+}
+
+td {
+  border: 1px solid black;
+}
+
+th, td {
+  padding: 15px;
+  text-align: center;
+}
+
+.button {
+  background-color: #FAFAFA;
+  border: 1px solid black;
+  color: black;
+  padding: 1px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background: lightgray;
+  color: black;
+}
+
+

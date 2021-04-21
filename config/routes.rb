@@ -5,5 +5,10 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :new, :create]
   # Home page is the root.
   root 'home#home'
+  # Some shit I wrote ages ago that works - Arthur
+  get 'home', to: 'home#home'
+  get 'helps', to: 'helps#new'
+  get 'users', to: 'users#show'
+  get 'runs', to: 'runs#new'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
