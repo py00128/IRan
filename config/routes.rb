@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   root 'home#home'
   # Some shit I wrote ages ago that works - Arthur
   get 'home', to: 'home#home'
-  get 'helps', to: 'helps#new'
   get 'users', to: 'users#show'
   get 'runs', to: 'runs#new'
+  get 'helps', to: 'helps#new'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
