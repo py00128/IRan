@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # Resource paths.
   resources :helps, only: [:new, :create]
   resources :runs, only: [:show, :new, :create]

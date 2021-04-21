@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>iRan Application</title>
+    <title><%= t('app_title') %></title>
   </head>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
@@ -22,6 +22,10 @@
     <li style="float:right"><%= link_to "Help", helps_path, :class => current_class?(helps_path) %></li>
 
   </ul>
+
+  <% flash.each do |key, value| %>
+    <%= content_tag :div, content_tag(:p, value), id: "#{key}" unless value.blank? %>
+  <% end %>
 
   <%= yield %>
 
