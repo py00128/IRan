@@ -60,6 +60,8 @@ gem 'modernizr-rails'
 
 gem 'rails-controller-testing'
 
+gem 'devise'
+
 #spotifyAPI
 gem 'rack-cors'
 gem 'active_model_serializers'

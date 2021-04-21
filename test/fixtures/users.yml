@@ -2,10 +2,12 @@
 
 one:
   name: An Example
-  emailAddress: example@example.com
   age: 1
+  email: example@example.com
+  encrypted_password: example
 
 two:
   name: An Example
-  emailAddress: example@example.com
   age: 1
+  email: email@email.com
+  encrypted_password: example

@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
+  devise_for :users
   # Resource paths.
   resources :helps, only: [:new, :create]
-  resources :runs, only: [:new, :create]
+  resources :runs, only: [:show, :new, :create]
   resources :users, only: [:show, :new, :create]
   # Home page is the root.
   root 'home#home'
   # Some shit I wrote ages ago that works - Arthur
   get 'home', to: 'home#home'
-  get 'users', to: 'users#show'
-  get 'runs', to: 'runs#new'
   get 'helps', to: 'helps#new'
   get 'contact', to: 'home#contact'
   post 'request_contact', to: 'home#request_contact'

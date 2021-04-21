@@ -16,8 +16,9 @@ class UserTest < ActiveSupport::TestCase
     user = User.new # creates a new user
 
     user.name = 'An Example' # sets the name of the user
-    user.emailAddress = 'example@example.com' # sets the emailAddress of the user
     user.age = 1 # sets the age of the user
+    user.email = 'example@example.com' # sets the email of the user
+    user.encrypted_password = 'example' # sets the encrypted_password of the user
 
     user.save # attempts to save the user
     assert user.valid? # the user should be saved
@@ -28,8 +29,9 @@ class UserTest < ActiveSupport::TestCase
     user = User.new # creates a new user
 
     user.name = 'example' # sets the name of the user to an invalid value
-    user.emailAddress = 'example@example.com' # sets the emailAddress of the user
+    user.email = 'example@example.com' # sets the emailAddress of the user
     user.age = 1 # sets the age of the user
+    user.encrypted_password = 'example' # sets the encrypted_password of the user
 
     user.save # attempts to save the user
     refute user.valid? # the user should not be saved
@@ -40,8 +42,9 @@ class UserTest < ActiveSupport::TestCase
     user = User.new # creates a new user
 
     user.name = 'An Example' # sets the name of the user
-    user.emailAddress = 'example' # sets the emailAddress of the user to an invalid value
     user.age = 1 # sets the age of the user
+    user.email = 'example' # sets the email of the user to an invalid value
+    user.encrypted_password = 'example' # sets the encrypted_password of the user
 
     user.save # attempts to save the user
     refute user.valid? # the user should not be saved
@@ -52,8 +55,9 @@ class UserTest < ActiveSupport::TestCase
     user = User.new # creates a new user
 
     user.name = 'An Example' # sets the name of the user
-    user.emailAddress = 'example@example.com' # sets the emailAddress of the user
     user.age = -1 # sets the age of the user to an invalid value
+    user.email = 'example@example.com' # sets the email of the user
+    user.encrypted_password = 'example' # sets the encrypted_password of the user
 
     user.save # attempts to save the user
     refute user.valid? # the user should not be saved
