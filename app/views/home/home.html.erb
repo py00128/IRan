@@ -1,20 +1,13 @@
 <html>
   <body>
-  <% if user_signed_in? %>
-    <div class="mapPlanner">
-      <p class="centerText">Left</p>
-    </div>
-    <div class="chatBox">
-      <p class="centerText">Top Right</p>
-    </div>
-    <div class="musicSuggestion">
-      <p class="centerText">Bottom Right</p>
-    </div>
-  <% end %>
-  <% if !user_signed_in? %>
-     <p>
-       <%= t('please_sign_in') %>
-     </p>
-  <% end %>
+  <div class="mapPlanner">
+    <p class="centerText">Left</p>
+  </div>
+  <div class="chatBox">
+    <p class="centerText">Top Right</p>
+  </div>
+  <div class="musicSuggestion">
+    <p class="centerText">Bottom Left</p>
+  </div>
   </body>
 </html>
