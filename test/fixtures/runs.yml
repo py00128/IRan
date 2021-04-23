@@ -2,6 +2,12 @@
 
 one:
   user: one
+  starting_point: starting point
+  destination: destination
+  date: 1/1/1990
 
 two:
   user: two
+  starting_point: starting point
+  destination: destination
+  date: 1/1/1990

@@ -7,6 +7,14 @@
           %li= message
 
   .field
-    = f.hidden_field :user_id, value: @user
+    = f.label :starting_point
+    = f.text_field :starting_point
+  .field
+    = f.label :destination
+    = f.text_field :destination
+  .field
+    = f.hidden_field :date, value: Date.today
+  .field
+    = f.hidden_field :user_id, value: current_user
   .actions
     = f.submit 'Save'

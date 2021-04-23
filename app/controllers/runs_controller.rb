@@ -28,6 +28,6 @@ class RunsController < ApplicationController
     # Only allow a list of trusted parameters through.
     # Creates the strong parameters for runs.
     def run_params
-      params.require(:run).permit(:user_id)
+      params.require(:run).permit(:user_id, :starting_point, :destination, :date)
     end
 end

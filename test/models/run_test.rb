@@ -20,6 +20,9 @@ class RunTest < ActiveSupport::TestCase
   test 'should save valid run' do
     run = Run.new # creates a new run
 
+    run.starting_point = 'starting point' # sets the starting point of the run
+    run.destination = 'destination' # sets the destination of the run
+    run.date = Date.today # sets the date of the run
     run.user = @user # sets the userID of the run
 
     run.save # attempts to save the run

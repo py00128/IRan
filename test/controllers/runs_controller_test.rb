@@ -16,7 +16,7 @@ class RunsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create run" do
     assert_difference('Run.count') do
-      post runs_url, params: { run: { user_id: @user } }
+      post runs_url, params: { run: { user_id: @user, starting_point: 'starting point', destination: 'destination', date: Date.today } }
     end
 
     assert_redirected_to root_url
