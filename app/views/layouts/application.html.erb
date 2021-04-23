@@ -19,8 +19,16 @@
 
   <ul>
     <li><%= link_to "Home", home_path, :class => current_class?(home_path) %></li>
+    <% if user_signed_in? %>
+      <li><%= link_to t('account'), user_path(current_user), :class => current_class?(user_path(current_user)) %></li>
+      <li><%= link_to t('create_run'), new_run_path, :class => current_class?(new_run_path) %></li>
+      <li style="float:right"><%= link_to t('sign_out'), destroy_user_session_path, method: :delete, :class => current_class?(destroy_user_session_path) %></li>
+    <% end %>
+    <% if !user_signed_in? %>
+      <li style="float:right"><%= link_to t('sign_in'), new_user_session_path, :class => current_class?(new_user_session_path) %></li>
+    <% end %>
     <li style="float:right"><%= link_to "Help", helps_path, :class => current_class?(helps_path) %></li>
-
+    <li style="float:right"><%= link_to t('contact_us'), contact_path, :class => current_class?(contact_path) %></li>
   </ul>
 
   <% flash.each do |key, value| %>

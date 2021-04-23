@@ -16,7 +16,7 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
 
     assert_template layout: 'application'
 
-    assert_select 'title', 'iRan Application'
+    assert_select 'title', 'IRan'
   end
 
   test "should get contact" do

@@ -39,6 +39,12 @@ en:
   id: "id"
   logo: "logo"
   copyright: "&copy;"
+  account: "Account"
+  create_run: "Create Run"
+  sign_out: "sign out"
+  sign_in: "sign in"
+  contact_us: "Contact Us"
+  please_sign_in: "Please Sign In To Use This Application"
 
   home:
     contact:
