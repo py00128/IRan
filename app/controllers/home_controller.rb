@@ -1,6 +1,9 @@
+require 'rspotify'
+
 class HomeController < ApplicationController
-  def home
-  end
+  RSpotify.authenticate("c2cc5da67aaa434aafe3a7436867e0dc", "f9e2653ee192439286af48f294c85dfc")
+
+  #RSpotify.Playlist.find("")
 
   def contact
   end
