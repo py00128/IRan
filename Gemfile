@@ -62,6 +62,12 @@ gem 'rails-controller-testing'
 
 gem 'devise'
 
+#Gems required for live streaming component
+gem 'jquery-rails'
+gem 'popper_js'
+gem 'tether-rails'
+gem 'simple_form'
+
 #spotifyAPI
 gem 'rack-cors'
 gem 'active_model_serializers'
