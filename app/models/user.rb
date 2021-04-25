@@ -16,4 +16,9 @@ class User < ApplicationRecord
   # A user can have 0 or more runs.
   # The runs which a user makes must be removed if the user is removed.
   has_many :runs, dependent: :destroy
+
+
+  def username
+    return email.split('@')[0]
+  end
 end
