@@ -4,10 +4,9 @@
     <p class="centerText">Left</p>
   </div>
   <div class="chatBox">
-    <p class="centerText">Top Right</p>
     <div class="jumbotron">
-      <h3 style="text-align:center">Chat</h3>
-      <div class="well" id="chatbox" style="height:100px; border: solid 1px #222222; overflow-y: scroll">
+      <p style="text-align:center">Chat</p>
+      <div class="well" id="chatbox" style="height:150px; border: solid 1px #222222; overflow-y: scroll;">
         <% @messages.each do |message| %>
           <%= render 'messages/message', message: message %>
         <% end %>
@@ -17,7 +16,7 @@
           <%= f.text_field :body, placeholder: "Send a chat", class: "form-control" %>
         </div>
         <div class="input-group-append">
-          <%= f.submit "Send", class: "btn btn-primary" %>
+          <%= f.submit "Send", class: "btn btn-secondary" %>
         </div>
       <% end %>
     </div>
