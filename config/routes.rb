@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post 'messages', to: "messages#create"
   devise_for :users
   # Resource paths.
   resources :helps, only: [:new, :create]
