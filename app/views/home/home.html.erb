@@ -3,8 +3,30 @@
   <div class="mapPlanner">
     <p class="centerText">Left</p>
   </div>
+
   <div class="chatBox">
-    <p class="centerText">Top Right</p>
+    <div class="jumbotron">
+      <p style="text-align:center;">Chat</p>
+      <div class="well" id="chatbox" style="height:150px; border: solid 1px #222222; overflow-y: scroll;">
+        <% @messages.each do |message| %>
+          <%= render 'messages/message', message: message %>
+        <% end %>
+      </div>
+      <% if current_user %>
+        <%= form_with model: @message do |f| %>
+          <div class="input-group mb-3">
+            <%= f.text_field :body, placeholder: "Send a chat", class: "form-control" %>
+            <div class='input-group-append'>
+              <%= f.submit "Send", class: "btn btn-primary" %>
+            </div>
+          </div>
+
+        <% end %>
+      <% else %>
+        <p style= "text-align:center">Sign in to send messages</p>
+      <% end %>
+    </div>
+
   </div>
   <div class="musicSuggestion">
     <h4 class="centerText">Songs That We Recommend:</h4>
