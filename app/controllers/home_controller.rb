@@ -8,9 +8,8 @@ class HomeController < ApplicationController
     @tracks = playlist.tracks.sample(8)
     @messages = Message.last(50)
     @message = Message.new
-  end
 
-  def contact
+    @runs = Run.all
   end
 
   def request_contact

@@ -1,18 +1,36 @@
 <html>
   <body>
+
   <div class="mapPlanner">
-    <p class="centerText">RouteViewer</p>
-    <p class="centerText">
-      <iframe
-      width="600"
-      height="450"
-      style="border:0"
-      loading="lazy"
-      allowfullscreen
-      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD6WkooXhE9Yn1d_72vhIUwHFlO2oAQklM
-    &q=University of Surrey, Surrey">
-    </iframe>
-    </p>
+
+    <p class="centerText">RouteViewer
+
+    <div class="runMenu">
+      <table>
+        <thead>
+        <tr>
+          <th>Date</th>
+          <th>Start</th>
+          <th>End</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @runs.each do |run| %>
+          <tr>
+            <td><%= run.date %></td>
+            <td><%= run.starting_point %></td>
+            <td><%= run.destination %></td>
+            <td><%= link_to 'Show', run, :class => 'button' %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="positionMap">
+      <%= render 'map' %>
+    </div>
+
   </div>
 
   <div class="chatBox">
