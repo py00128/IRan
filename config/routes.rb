@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # Resource paths.
   resources :helps, only: [:new, :create]
   resources :runs, only: [:show, :new, :create]
-  resources :users, only: :show
+  resources :users, only: [:show]
   # Home page is the root.
   root 'home#home'
   # Some shit I wrote ages ago that works - Arthur

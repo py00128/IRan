@@ -1,7 +1,6 @@
 require 'rspotify'
 
 class HomeController < ApplicationController
-
   def home
     RSpotify.authenticate("c2cc5da67aaa434aafe3a7436867e0dc", "f9e2653ee192439286af48f294c85dfc")
     playlist = RSpotify::Playlist.find('Spotify', '37i9dQZF1DWZUTt0fNaCPB')
@@ -27,5 +26,5 @@ class HomeController < ApplicationController
     end
 
     redirect_to root_path
-    end
+  end
 end

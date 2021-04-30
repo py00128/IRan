@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<table>
+  <thead>
+  <tr>
+    <th>Date</th>
+    <th>Start</th>
+    <th>End</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @runs.each do |run| %>
+    <tr>
+      <td><%= run.date %></td>
+      <td><%= run.starting_point %></td>
+      <td><%= run.destination %></td>
+      <td><%= link_to 'Display', run, :class => 'button' %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+</body>
+</html>
