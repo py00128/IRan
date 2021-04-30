@@ -8,7 +8,13 @@ class HomeController < ApplicationController
     @messages = Message.last(50)
     @message = Message.new
 
-    @runs = Run.all
+    @runs = current_user.runs
+    @currentRun = Run.find(params[:run_id])
+    @startingPoint = @currentRun.starting_point
+    @destination = @currentRun.destination
+    rescue ActiveRecord::RecordNotFound
+      @startingPoint = "University of Surrey"
+      @destination = "Manor Park"
   end
 
   def request_contact

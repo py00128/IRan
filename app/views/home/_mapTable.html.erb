@@ -15,7 +15,7 @@
       <td><%= run.date %></td>
       <td><%= run.starting_point %></td>
       <td><%= run.destination %></td>
-      <td><%= link_to 'Display', run, :class => 'button' %></td>
+      <td><%= link_to 'Display', root_path(params:{run_id: run.id}), :class => 'button' %></td>
     </tr>
   <% end %>
   </tbody>
