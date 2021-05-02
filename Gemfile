@@ -72,6 +72,3 @@ gem 'simple_form'
 gem 'rack-cors'
 gem 'active_model_serializers'
 gem 'rspotify'
-
-#mapsAPI
-gem 'google_maps_service'
