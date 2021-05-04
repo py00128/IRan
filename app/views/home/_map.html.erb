@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <body>
-<iframe id='map' width="700" height="650" style="border:0" loading="lazy" allowfullscreen></iframe>
+<iframe id='map' width="700" height="525" style="border:0" loading="lazy" allowfullscreen></iframe>
 <script>
     mapURL = "https://www.google.com/maps/embed/v1/directions?key=AIzaSyD6WkooXhE9Yn1d_72vhIUwHFlO2oAQklM " +
         "&origin=" + "<%= @startingPoint %>" +
         "&destination=" + "<%= @destination %>" +
         "&mode=walking"
-      document.getElementById("map").src = mapURL
+    document.getElementById("map").src = mapURL
 </script>
 </body>
 </html>
