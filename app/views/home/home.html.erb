@@ -41,5 +41,19 @@
     <h4 class="centerText">Songs That We Recommend:</h4>
     <%= render 'spotify' %>
   </div>
+
+  <footer>
+    <div class="Disclaimer">
+      <p>
+        <u>Inspirational Quote Generator:</u>
+      </p>
+      <p>
+        <%= %Q["#{@response["quote"]}"] %>
+      </p>
+      <p>
+        Author - <%= %Q[#{@response["author"]}] %>
+      </p>
+    </div>
+  </footer>
   </body>
 </html>

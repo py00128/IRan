@@ -1,7 +1,28 @@
 require 'rspotify'
 
 class HomeController < ApplicationController
+  before_action :authenticate_user!
+
   def home
+    require 'uri'
+    require 'net/http'
+    require 'openssl'
+    require 'json'
+
+    url = URI("https://bodybuilding-quotes.p.rapidapi.com/random-quote")
+
+    http = Net::HTTP.new(url.host, url.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+    request = Net::HTTP::Get.new(url)
+    request["x-api-key"] = '{{api-key}}'
+    request["x-rapidapi-key"] = '0ec5e093f3mshff96e3b8fa106a4p171143jsn3c79520f5497'
+    request["x-rapidapi-host"] = 'bodybuilding-quotes.p.rapidapi.com'
+
+    response = http.request(request)
+    @response = JSON.parse(response.read_body)
+
     RSpotify.authenticate("c2cc5da67aaa434aafe3a7436867e0dc", "f9e2653ee192439286af48f294c85dfc")
     playlist = RSpotify::Playlist.find('Spotify', '37i9dQZF1DWZUTt0fNaCPB')
     @tracks = playlist.tracks.sample(8)
