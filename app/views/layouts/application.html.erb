@@ -21,14 +21,12 @@
   <ul>
     <li><%= link_to "Home", home_path, :class => current_class?(home_path) %></li>
     <% if user_signed_in? %>
-      <li><%= link_to t('account'), user_path(current_user), :class => current_class?(user_path(current_user)) %></li>
       <li><%= link_to t('create_run'), new_run_path, :class => current_class?(new_run_path) %></li>
       <li style="float:right"><%= link_to t('sign_out'), destroy_user_session_path, method: :delete, :class => current_class?(destroy_user_session_path) %></li>
     <% end %>
     <% if !user_signed_in? %>
       <li style="float:right"><%= link_to t('sign_in'), new_user_session_path, :class => current_class?(new_user_session_path) %></li>
     <% end %>
-    <li style="float:right"><%= link_to "Help", helps_path, :class => current_class?(helps_path) %></li>
     <li style="float:right"><%= link_to t('contact_us'), contact_path, :class => current_class?(contact_path) %></li>
   </ul>
 
@@ -37,33 +35,5 @@
   <% end %>
 
   <%= yield %>
-
-  <footer>
-    <div class="Disclaimer">
-      <%require 'uri'
-        require 'net/http'
-        require 'openssl'
-
-        url = URI("https://bodybuilding-quotes.p.rapidapi.com/random-quote")
-
-        http = Net::HTTP.new(url.host, url.port)
-        http.use_ssl = true
-        http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-
-        request = Net::HTTP::Get.new(url)
-        request["x-api-key"] = '{{api-key}}'
-        request["x-rapidapi-key"] = '0ec5e093f3mshff96e3b8fa106a4p171143jsn3c79520f5497'
-        request["x-rapidapi-host"] = 'bodybuilding-quotes.p.rapidapi.com'
-
-        response = http.request(request)%>
-      <script>
-        inspQuote = JSON.parse('<%= response.read_body %>'.replace(/&quot;/g,'"'));
-        document.getElementById("quote").innerHTML = inspQuote.quote;
-        document.getElementById("author").innerHTML = inspQuote.author;
-      </script>
-      <p id="quote"></p>
-      <p id="author"></p>
-    </div>
-  </footer>
   </body>
 </html>
