@@ -72,3 +72,6 @@ gem 'simple_form'
 gem 'rack-cors'
 gem 'active_model_serializers'
 gem 'rspotify'
+
+#smelly JSON gem
+gem 'json'
