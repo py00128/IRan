@@ -31,6 +31,22 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+  <p>
+    Please read the Terms and Conditions before creating an account:
+  </p>
+
+  <a href="javascript:window.open('<%= terms_and_conditions_path %>')">
+    Terms and Conditions
+  </a>
+
+
+
+
+  <div class="field">
+    <%= f.check_box(:read_terms_and_conditions) %>
+    <%= f.label "I agree to the Terms and Conditions" %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
