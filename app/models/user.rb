@@ -13,10 +13,11 @@ class User < ApplicationRecord
   # The age must be greater than or equal to 0.
   # The age of the user must not be null.
   validates :age, numericality: { greater_than_or_equal_to: 0 }, presence: true
+  # The read_terms_and_conditions must be equal to 1.
+  validates_inclusion_of :read_terms_and_conditions, in: %w(1)
   # A user can have 0 or more runs.
   # The runs which a user makes must be removed if the user is removed.
   has_many :runs, dependent: :destroy
-
 
   def username
     return email.split('@')[0]

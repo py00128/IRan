@@ -5,9 +5,11 @@ one:
   age: 1
   email: example@example.com
   encrypted_password: example
+  read_terms_and_conditions: 1
 
 two:
   name: An Example
   age: 1
   email: email@email.com
   encrypted_password: example
+  read_terms_and_conditions: 1
