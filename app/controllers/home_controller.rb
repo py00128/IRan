@@ -9,16 +9,15 @@ class HomeController < ApplicationController
     require 'openssl'
     require 'json'
 
-    url = URI("https://bodybuilding-quotes.p.rapidapi.com/random-quote")
+    url = URI("https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote?token=ipworld.info")
 
     http = Net::HTTP.new(url.host, url.port)
     http.use_ssl = true
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
     request = Net::HTTP::Get.new(url)
-    request["x-api-key"] = '{{api-key}}'
     request["x-rapidapi-key"] = '0ec5e093f3mshff96e3b8fa106a4p171143jsn3c79520f5497'
-    request["x-rapidapi-host"] = 'bodybuilding-quotes.p.rapidapi.com'
+    request["x-rapidapi-host"] = 'quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com'
 
     response = http.request(request)
     @response = JSON.parse(response.read_body)
