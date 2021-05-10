@@ -2,6 +2,13 @@
 <html>
   <head>
     <title><%= t('app_title') %></title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KB5ERF105Z"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KB5ERF105Z');
+    </script>
   </head>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
