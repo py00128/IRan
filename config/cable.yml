@@ -1,5 +1,6 @@
 development:
-  adapter: async
+  adapter: redis
+  url: redis://redistogo:86be7fc772c9f13aa571dc639a6aa7e6@spinyfin.redistogo.com:9123/
 
 test:
   adapter: async
