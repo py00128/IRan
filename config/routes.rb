@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root 'home#home'
   # Some shit I wrote ages ago that works - Arthur
   get 'home', to: 'home#home'
+  get 'terms_and_conditions', to: 'home#terms_and_conditions'
   get 'helps', to: 'helps#new'
   get 'contact', to: 'home#contact'
   post 'request_contact', to: 'home#request_contact'
