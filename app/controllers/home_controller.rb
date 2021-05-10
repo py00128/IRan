@@ -1,7 +1,7 @@
 require 'rspotify'
 
 class HomeController < ApplicationController
-  before_action :authenticate_user!, except: [:terms_and_conditions]
+  before_action :authenticate_user!
 
   def home
     require 'uri'
@@ -35,9 +35,6 @@ class HomeController < ApplicationController
     rescue ActiveRecord::RecordNotFound
       @startingPoint = "University of Surrey"
       @destination = "Manor Park"
-  end
-
-  def terms_and_conditions
   end
 
   def request_contact
