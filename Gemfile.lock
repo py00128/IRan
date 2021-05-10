@@ -257,7 +257,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.2)
     temple (0.8.2)
     tether-rails (1.4.0)
       rails (>= 3.1)
@@ -319,7 +318,6 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   selenium-webdriver
   simple_form
-  sqlite3
   tether-rails
   turbolinks (~> 5)
   tzinfo-data
