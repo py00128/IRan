@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2021_05_05_151737) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "helps", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", null: false
@@ -22,7 +25,7 @@ ActiveRecord::Schema.define(version: 2021_05_05_151737) do
 
   create_table "messages", force: :cascade do |t|
     t.text "body"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_messages_on_user_id"
@@ -31,10 +34,10 @@ ActiveRecord::Schema.define(version: 2021_05_05_151737) do
   create_table "runs", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
+    t.bigint "user_id"
     t.string "starting_point", default: "", null: false
     t.string "destination", default: "", null: false
-    t.string "date", default: "-4712-01-01", null: false
+    t.string "date", default: "4713-01-01 BC", null: false
     t.index ["user_id"], name: "index_runs_on_user_id"
   end
 
@@ -53,4 +56,6 @@ ActiveRecord::Schema.define(version: 2021_05_05_151737) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "messages", "users"
+  add_foreign_key "runs", "users"
 end
