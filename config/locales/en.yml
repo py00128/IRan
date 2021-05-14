@@ -51,6 +51,7 @@ en:
       title: Contact Us
       contact_us: Complete the following form to get in touch with us.
 
+      contact_form_id: "contact_form"
       name: "Name:"
       enter_name: Enter your name
       email: "Email:"
@@ -58,6 +59,7 @@ en:
       message: "Message:"
       enter_message: What do you want to say?
       submit: Contact Us
+      submit_id: "submit_contact_form"
 
     request_contact:
       no_email: You must supply an email address

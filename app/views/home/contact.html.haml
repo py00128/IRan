@@ -1,6 +1,6 @@
 %h1 Contact Us
 %p Complete the following form to get in touch with us.
-=form_tag request_contact_path, method: 'post' do
+=form_tag request_contact_path, method: 'post', id: t('.contact_form_id') do
   = label_tag :name, t('.name')
   = text_field_tag :name, '', title: t('.enter_name'), size: 50
 
@@ -13,6 +13,4 @@
   =label_tag :message, t('.message')
   =text_field_tag :message, '', title: t('.enter_message'), size: 100
 
-  =submit_tag t('.submit')
-
-
+  =submit_tag t('.submit'), id: t('.submit_id')

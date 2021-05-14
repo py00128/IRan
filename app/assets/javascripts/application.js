@@ -14,6 +14,8 @@
 //= require bootstrap-sprockets
 //= require popper
 //= require jquery_ujs
+//= require jquery.validate.min.js
+//= require validate_contact_form.js
 //= require activestorage
 //= require turbolinks
 //= require_tree .

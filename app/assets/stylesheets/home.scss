@@ -51,3 +51,9 @@
   padding-left: 800px;
   left:0;
 }
+
+/* sets the style of the form labels and the form inputs */
+form label, form input {
+  display: block; /* sets the display to block */
+  margin: 10px; /* sets the margin to 10px */
+}
