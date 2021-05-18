@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+PostgreSQL is required to run this application, the postgreSQL password that is required is rootpassword. Please also run rake db:create and migrate the database before running the application.
 
-Things you may want to cover:
+Please run bundle install to run this application.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The deployed web application is https://iran-run-planner.herokuapp.com
